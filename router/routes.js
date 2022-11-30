@@ -115,8 +115,6 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/api", async (req, res) => {
-  console.log("called");
-  // res.send({ result: "go away" });
   const result = await dbOperation.getEmployees(req.body.name);
   console.log("MY RESULT: ", result);
   res.send(result.recordset);
@@ -137,7 +135,6 @@ router.post("/create", async (req, res) => {
     req.body.lastUpdateDate
   );
   await dbOperation.createCompany(Pam);
-  console.log("OUR OBJECT ", Pam);
   // await dbOperation.createEmployees(req.body);
   // const result = await dbOperation.getEmployees(req.body.name);
   // console.log("MY RESULT 2: ", result);
@@ -145,8 +142,6 @@ router.post("/create", async (req, res) => {
 });
 
 router.post("/insertcompany", async (req, res) => {
-  console.log("COMP BODY IS: ", req.body);
-
   let Pam = new Company(
     req.body.id,
     req.body.compname,
@@ -175,6 +170,11 @@ router.post("/insertcompany", async (req, res) => {
   // const result = await dbOperation.getEmployees(req.body.name);
   // // console.log("MY RESULT 2: ", result);
   res.send({ data: "data inserted" });
+});
+
+router.post("/fetchcompany", async (req, res) => {
+  const result = await dbOperation.getCompany();
+  res.send(result.recordset);
 });
 
 // FETCHING DOCUMENTS HERE

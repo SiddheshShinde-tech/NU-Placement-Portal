@@ -21,6 +21,22 @@ const getEmployees = async (name) => {
   }
 };
 
+const getCompany = async (Company) => {
+  try {
+    let pool = await sql.connect(config);
+    let employees = await pool.request().query(`SELECT * FROM PLA_COMPANY$`);
+    // let employees2 = await pool
+    //   .request()
+    //   .query(
+    //     `SELECT * FROM CORE_PLACEMENT_REQUIREMENT_TYPE$ WHERE REQUIREMENT_NAME='${name}'`
+    //   );
+    console.log("INSIDE ", employees);
+    return employees;
+  } catch (error) {
+    console.log("CATCHED ERROR IS ", error);
+  }
+};
+
 // WRITE OPERATION
 
 const createEmployees = async (Employee) => {
@@ -76,4 +92,5 @@ module.exports = {
   createEmployees,
   createCompany,
   createCompanyContact,
+  getCompany,
 };
