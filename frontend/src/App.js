@@ -13,6 +13,7 @@ import Calender from "./components/Calendar";
 import Analytics from "./components/Analytics";
 import Test from "./components/Test";
 import AddCompany from "./components/AddCompany";
+import DisplayCompany from "./components/DisplayCompany";
 // import DemoPie from "./components/AntChart";
 
 // import ForgotPassword from "./ForgotPassword";
@@ -22,7 +23,7 @@ import AddCompany from "./components/AddCompany";
 function App() {
   return (
     <>
-     <link style={{ color: "red" }}></link>
+      <link style={{ color: "red" }}></link>
       <Router>
         <AuthProvider>
           <Switch>
@@ -37,7 +38,8 @@ function App() {
             <PrivateRoute path="/calendar" component={Calender} />
             <PrivateRoute path="/analytics" component={Analytics} />
             <PrivateRoute path="/sql" component={Test} />
-            <PrivateRoute path="/company" component={AddCompany} />
+            <PrivateRoute path="/addcompany" component={AddCompany} />
+            <PrivateRoute path="/viewcompany" component={DisplayCompany} />
             {/* <PrivateRoute path="/antcharts" component={DemoPie} /> */}
           </Switch>
         </AuthProvider>
