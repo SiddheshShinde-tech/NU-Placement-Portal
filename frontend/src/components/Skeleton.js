@@ -12,7 +12,7 @@ function Skeleton() {
       <Topnav />;
       <div>
         <div className="main-app">
-          <div className="sidebar" >
+          <div className="sidebar">
             <nav className="main-nav">
               <ul className="main-menu">
                 <li className="menu-item active">
@@ -56,14 +56,10 @@ function Skeleton() {
                   </a>
                 </li> */}
                 <li className="menu-item">
-                  <a
-                    href="https://princ1211jain.activehosted.com"
-                    className="menu-a"
-                    target="_blank"
-                  >
+                  <a href="#/viewcompany" className="menu-a">
                     <div className="menu-txt-hld">
-                      <i class="fas fa-envelope menu-icon"></i>
-                      <span className="menu-txt">AutoEmailers</span>
+                      <i class="fas fa-building menu-icon"></i>
+                      <span className="menu-txt">Company</span>
                     </div>
                   </a>
                 </li>
